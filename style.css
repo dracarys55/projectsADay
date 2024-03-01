@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 42, 42, 0.963);
+}
+.card {
+  margin: 1rem;
+  width: 300px;
+  height: 300px;
+  transition: all 0.5s ease-in-out;
+  position: relative; /* 父元素設置為相對定位 */
+  border-radius: 15px;
+  box-shadow: rgb(0, 0, 0, 0.7) 5px 10px 50px, rgb(0, 0, 0, 0.7) -5px 0px 250px;
+}
+.card.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  z-index: 100;
+  border: none;
+}
+.overlay {
+  position: absolute; /* 覆蓋層使用絕對定位 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent; /* 背景透明 */
+  z-index: 10; /* 確保覆蓋層位於最上方 */
+}
+.card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: relative; /* 確保 iframe 和覆蓋層在同一層疊上下文中 */
+}
+
+.button {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
